@@ -14,9 +14,8 @@ class CreateAccontController extends Controller
     }
 
     public function readView() {
-        $userss = DB::table('users')->get();
-        
-        return view('showTable', ['data'=> $userss]);
+        $users = User::all();
+        return view('showTable', compact('users'));
     }
 
     public function addDatabase(Request $request) {
